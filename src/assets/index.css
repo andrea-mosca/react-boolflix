@@ -1,13 +1,13 @@
 .navbar-brand{
     color: red;
 }
-main{
+body{
     
     background-color: lightgrey;
 }
 
 /* ---CARD--- */
-/* .card {
+.card {
   position: relative;
   overflow: hidden;
 }
@@ -34,10 +34,10 @@ main{
   overflow-y: auto; 
 }
 
-.card:hover .card-img-top {
+.card .card-img-top {
   opacity: 0;
 }
 
-.card:hover .card-body {
+.card .card-body {
   opacity: 1;
-} */
+}
