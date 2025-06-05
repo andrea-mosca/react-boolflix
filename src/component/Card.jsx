@@ -1,7 +1,14 @@
-export default function Card({ title, originalTitle, language, valutation }) {
+export default function Card({
+  image,
+  title,
+  originalTitle,
+  language,
+  valutation,
+}) {
   return (
     <div className="card">
-      <div className="movie-info">
+      <img src={image} alt={title} className="card-img-top" />
+      <div className="card-body">
         <h5>title:{title}</h5>
         <div>original title:{originalTitle}</div>
         <div>original language:{language}</div>
