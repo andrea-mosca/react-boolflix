@@ -1,7 +1,7 @@
 import { useFilms } from "../../context/FilmsContext";
 import { useSeries } from "../../context/SeriesContext";
 import Card from "../Card";
-const imgBaseUrl = "https://image.tmdb.org/t/p/w500";
+const imgBaseUrl = "https://image.tmdb.org/t/p/w342";
 export default function Main() {
   const { films } = useFilms();
   const { series } = useSeries();
@@ -22,6 +22,7 @@ export default function Main() {
                       originalTitle={film.original_title}
                       language={film.original_language}
                       valutation={film.vote_average}
+                      overview={film.overview}
                     />
                   </div>
                 ))
@@ -44,6 +45,7 @@ export default function Main() {
                       originalTitle={serie.original_name}
                       language={serie.original_language}
                       valutation={serie.vote_average}
+                      overview={serie.overview}
                     />
                   </div>
                 ))
