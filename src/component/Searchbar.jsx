@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { useFilms } from "../context/FilmsContext";
+import { useSeries } from "../context/SeriesContext";
 export default function Searchbar() {
   const [filter, setFilter] = useState("");
-  const { setQuery } = useFilms();
+  const { setQueryFilms } = useFilms();
+  const { setQuerySeries } = useSeries();
 
   const handleFormFilterSubmit = (e) => {
     e.preventDefault();
 
-    setQuery(filter);
+    setQueryFilms(filter);
+    setQuerySeries(filter);
   };
   return (
     <nav className="navbar bg-black">

@@ -3,24 +3,22 @@ import axios from "axios";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 const apiKey = import.meta.env.VITE_API_KEY;
-const query = "Harry";
 const FilmsContext = createContext();
 
 function FilmsProvider({ children }) {
   const [films, setFilms] = useState([]);
-  const [query, setQuery] = useState("");
+  const [queryFilms, setQueryFilms] = useState("");
 
   const fetchFilms = () => {
     axios
-      .get(`${apiUrl}/search/movie?api_key=${apiKey}&query=${query}`)
+      .get(`${apiUrl}/search/movie?api_key=${apiKey}&query=${queryFilms}`)
       .then((res) => {
-        console.log(res.data.results);
         setFilms(res.data.results);
       });
   };
-  useEffect(fetchFilms, [query]);
+  useEffect(fetchFilms, [queryFilms]);
 
-  const filmData = { films, setQuery };
+  const filmData = { films, setQueryFilms };
   return (
     <FilmsContext.Provider value={filmData}>{children}</FilmsContext.Provider>
   );
