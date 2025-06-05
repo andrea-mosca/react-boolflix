@@ -8,6 +8,7 @@ const FilmsContext = createContext();
 
 function FilmsProvider({ children }) {
   const [films, setFilms] = useState([]);
+  const [query, setQuery] = useState("");
 
   const fetchFilms = () => {
     axios
@@ -17,9 +18,9 @@ function FilmsProvider({ children }) {
         setFilms(res.data.results);
       });
   };
-  useEffect(fetchFilms, []);
+  useEffect(fetchFilms, [query]);
 
-  const filmData = { films };
+  const filmData = { films, setQuery };
   return (
     <FilmsContext.Provider value={filmData}>{children}</FilmsContext.Provider>
   );
