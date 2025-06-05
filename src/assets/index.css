@@ -10,6 +10,7 @@ body{
 .card {
   position: relative;
   overflow: hidden;
+  height: 500px;
 }
 
 .card-img-top {
@@ -34,10 +35,15 @@ body{
   overflow-y: auto; 
 }
 
-.card .card-img-top {
+.card:hover .card-img-top {
   opacity: 0;
 }
 
-.card .card-body {
+.card:hover .card-body {
   opacity: 1;
+}
+
+
+.star-yellow{
+  color: yellow;
 }

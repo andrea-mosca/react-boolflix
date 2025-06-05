@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+
 export default function Card({
   image,
   title,
@@ -5,6 +8,11 @@ export default function Card({
   language,
   valutation,
 }) {
+  const fullStars = Math.ceil(valutation / 2);
+  const starIcon = [...Array(fullStars)].map((star, i) => (
+    <FontAwesomeIcon icon={faStar} key={i} className="star-yellow" />
+  ));
+
   return (
     <div className="card">
       <img src={image} alt={title} className="card-img-top" />
@@ -21,8 +29,7 @@ export default function Card({
           <span>{language}</span>
         </div>
         <div className="mt-1">
-          <span className="fw-bolder">Valutation:</span>{" "}
-          <span>{valutation}</span>
+          <span className="fw-bolder">Rating:</span> <span>{starIcon}</span>
         </div>
       </div>
     </div>
