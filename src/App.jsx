@@ -1,14 +1,14 @@
-import { useState } from "react";
-import Header from "./component/Header";
-import Main from "./component/Main";
-import Footer from "./component/Footer";
+import Header from "./component/layout/Header";
+import Main from "./component/layout/Main";
+import { FilmsProvider } from "./context/FilmsContext";
 
 function App() {
   return (
     <>
-      <Header></Header>
-      <Main></Main>
-      <Footer></Footer>
+      <FilmsProvider>
+        <Header></Header>
+        <Main></Main>
+      </FilmsProvider>
     </>
   );
 }

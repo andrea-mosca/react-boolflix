@@ -1,4 +1,4 @@
-import Searchbar from "./Searchbar";
+import Searchbar from "../Searchbar";
 export default function Header() {
   return (
     <>
