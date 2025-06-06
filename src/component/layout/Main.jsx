@@ -2,9 +2,11 @@ import { useFilms } from "../../context/FilmsContext";
 import { useSeries } from "../../context/SeriesContext";
 import Card from "../Card";
 const imgBaseUrl = "https://image.tmdb.org/t/p/w342";
+
 export default function Main() {
   const { films } = useFilms();
   const { series } = useSeries();
+
   return (
     <main>
       <div className="container">
