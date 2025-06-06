@@ -12,7 +12,9 @@ export default function Main() {
       <div className="container">
         <div className="row row-cols-2 g-5">
           <div className="col">
-            <div className="text-center my-3 fw-bolder fs-4">FILM</div>
+            <div className="my-3 ps-3 fw-bolder fs-4 title-categories">
+              FILMS LIST:
+            </div>
             <div className="row row-cols-2 g-2">
               {films && films.length > 0 ? (
                 films.map((film, index) => (
@@ -35,7 +37,9 @@ export default function Main() {
           </div>
 
           <div className="col">
-            <div className="text-center my-3 fw-bolder fs-4">SERIE</div>
+            <div className="my-3 ps-3 fw-bolder fs-4 title-categories">
+              SERIES LIST:
+            </div>
             <div className="row row-cols-2 g-2">
               {series && series.length > 0 ? (
                 series.map((serie, index) => (
